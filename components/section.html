@@ -1,0 +1,187 @@
+<section class="cameras">
+    <div class="container">
+        <div class="cameras_inner">
+
+            <!--FILTRES-->
+            <div class="filtres__inner">
+                <h3 class="filtres__item">ФОТОТЕХНИКА</h3>
+                <button type="submit" class="filtres__link" onclick="OpenFilterPopup()">
+                    <img class="filtres__options" src=" images/options.svg" alt="Опции фильтра">
+                </button>
+            </div>
+            <!--FORM FILTRES-->
+            <form class="cameras__filtres" action="/" id="cameras__filtres">
+                <label for="cameras_logo">
+                    <select class="cameras__logo" name="cameras_logo" id="cameras_logo" >
+                        <option class="cameras__logo-item" value="logo_item1">Любого логотипа</option>
+                        <option class="cameras__logo-item" value="logo_item2">Компакт-камера</option>
+                        <option class="cameras__logo-item" value="logo_item3">Беззеркальная</option>
+                        <option class="cameras__logo-item" value="logo_item4">Зеркальная</option>
+                        <option class="cameras__logo-item" value="logo_item5">Среднеформатная</option>
+                    </select>
+                </label>
+
+                <label for="cameras_brand">
+                    <select class="cameras__brand" name="cameras_brand" id="cameras_brand">
+                    <option class="cameras__brand-item" value="brand_item1">Любого бренда</option>
+                    <option class="cameras__brand-item" value="brand_item2">Canon</option>
+                    <option class="cameras__brand-item" value="brand_item3">Nikon</option>
+                    <option class="cameras__brand-item" value="brand_item4">Sony</option>
+                    <option class="cameras__brand-item" value="brand_item5">Fujifilm</option>
+                    <option class="cameras__brand-item" value="brand_item6">Samsung</option>
+                    <option class="cameras__brand-item" value="brand_item7">Olympus</option>
+                </select>
+                </label>
+
+                <div class="cameras__price">
+                    <span class="cameras__text cameras__price-title">по цене</span>
+
+                    <div class="cameras__price-container">
+                        <label  class="cameras__price-limit-start" for="start_price">от</label>
+                        <input class="cameras__price-start" type="text" id="start_price" name="start_price">
+                    </div>
+
+                    <div class="cameras__price-container">
+                        <label  class="cameras__price-limit-end" for="end_price">до</label>
+                        <input class="cameras__price-end" type="text" id="end_price" name="end_price">
+                    </div>
+
+                    <span class="cameras__text cameras__price-currency">рублей</span>
+                </div>
+            </form>
+
+            <!--CARDS-->
+            <div class="cards">
+                <!--BIG CARD-->
+                <div class="cardBig" onclick="CardClick()" id="cardBig">
+                        <img class="cardBig__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardBig__description">
+                            <h3 class="cardBig__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardBig__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных
+                                любителей профессиональных фотографов и видеооператоров. Преемник успешной
+                                модели EOS 5D Mark II. Фотоаппарат имеет 22.3 Мп. CMOS-сенсор размером 36х24
+                                мм, 14-битный процессор DIGIC 5+, 61-точечный автофокус.
+                            </p>
+                            <div class="cardBig__priceBlock">
+                                <p class="cardBig__priceBlock-oldprice">4 400,00 руб.</p>
+                                <a href="/"  onclick="BasketClickCardBig()"><p class="cardBig__priceBlock-newprice">3 200,00 руб.</p></a>
+                            </div>
+                        </div>
+                </div>
+
+                <!--SMALL CARDS-->
+                <div class="cardItem" onclick="CardClick()" >
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                </div>
+
+                <div class="cardItem" onclick="CardClick()">
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                </div>
+
+                <!--SMALL CARDS-->
+                 <div class="cardItem" onclick="CardClick()">
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                </div>
+
+                 <div class="cardItem" onclick="CardClick()">
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                 </div>
+
+                 <div class="cardItem" onclick="CardClick()">
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                 </div>
+
+                 <div class="cardItem" onclick="CardClick()">
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                 </div>
+
+                 <div class="cardItem" onclick="CardClick()">
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                 </div>
+
+                 <div class="cardItem" onclick="CardClick()">
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                 </div>
+
+                 <div class="cardItem" onclick="CardClick()">
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                 </div>
+
+                 <div class="cardItem" onclick="CardClick()">
+                        <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                        <div class="cardItem__description">
+                            <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                            <p class="cardItem__text">
+                                Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                            </p>
+                            <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                        </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</section>

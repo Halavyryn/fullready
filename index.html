@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href=" css/style.min.css">
+    <link rel="stylesheet" href=" libs/selectric/selectric.css">
+
+
+</head>
+<body>
+
+<!--POPUP FOR FILTERS-->
+<div class="filterPopup" id="filterPopup">
+    <div class="filterPopup__inner">
+        <button class="filterPopup__button" onclick="CloseFilterPopup()" id="filterPopup__button"></button>
+
+        <!--FORM FILTRES-->
+        <form class="cameras__filtres" action="#" id="filterPopup__form">
+            <label for="Popup__cameras-logo">
+                <select class="cameras__logo" name="cameras_logo" id="Popup__cameras-logo" >
+                    <option class="cameras__logo-item" value="logo_item1">Любого логотипа</option>
+                    <option class="cameras__logo-item" value="logo_item2">Компакт-камера</option>
+                    <option class="cameras__logo-item" value="logo_item3">Беззеркальная</option>
+                    <option class="cameras__logo-item" value="logo_item4">Зеркальная</option>
+                    <option class="cameras__logo-item" value="logo_item5">Среднеформатная</option>
+                </select>
+            </label>
+
+            <label for="Popup__cameras-brand">
+                <select class="cameras__brand" name="cameras_brand" id="Popup__cameras-brand">
+                    <option class="cameras__brand-item" value="brand_item1">Любого бренда</option>
+                    <option class="cameras__brand-item" value="brand_item2">Canon</option>
+                    <option class="cameras__brand-item" value="brand_item3">Nikon</option>
+                    <option class="cameras__brand-item" value="brand_item4">Sony</option>
+                    <option class="cameras__brand-item" value="brand_item5">Fujifilm</option>
+                    <option class="cameras__brand-item" value="brand_item6">Samsung</option>
+                    <option class="cameras__brand-item" value="brand_item7">Olympus</option>
+                </select>
+            </label>
+            <div class="cameras__price">
+
+                <div class="cameras__price-container">
+                    <label  class="cameras__price-limit-start" for="Popup__start-price">от</label>
+                    <input class="cameras__price-start" type="text" id="Popup__start-price" name="start_price">
+                </div>
+
+                <div class="cameras__price-container">
+                    <label  class="cameras__price-limit-end" for="Popup__end-price">до</label>
+                    <input class="cameras__price-end" type="text" id="Popup__end-price" name="end_price">
+                </div>
+
+                <button class="filterPopup__inner-button" type="submit" disabled>ПРИМЕНИТЬ</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--SECTION HEADER-->
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <!--contacts-->
+            <div class="header__contacts">
+                <!--logo-->
+                <div class="logo">
+                    <a href="#" class="logo_link">
+                        <img class="logo_img" src=" images/logo.webp" alt="">
+                    </a>
+                </div>
+
+                <!--phone-->
+                <div class="tel">
+                    <a href="tel:+88007775050">
+                        <p class="tel__link">8 800 777 50 50</p>
+                    </a>
+                </div>
+
+                <!--search-->
+                <div class="search__inner">
+                    <form class="search__form" id="search__form" method="get" action="#">
+                        <button class="search__form-button" type="submit" onclick="return SearchButtonClick()"></button>
+                        <label for="search">
+                            <input class="search__form-input" type="text" placeholder="Поиск товаров" id="search">
+                        </label>
+                    </form>
+                </div>
+
+            </div>
+
+            <!--payment-->
+            <div class="payment">
+                <a href="#" class="payment__link">
+                    Доставка и оплата
+                </a>
+            </div>
+        </div>
+
+        <div class="header__menu">
+            <!--MENU-->
+            <div id="shopmenu">
+                <input id="goods-menu-toggle" type="checkbox">
+                <label class="menu-button-container" for="goods-menu-toggle">
+                </label>
+
+                <div id="goodsmenu">
+                    <nav class="goodsmenu">
+                        <ul class="menu">
+                            <li class="menu__list"><a href="#" class="menu__link">Мобильные телефоны</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Планшеты</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Фототехника</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Ноутбуки</a></li>
+                            <li class="menu__list"><a href="#" class="menu__link">Телевизоры</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!--logo-->
+            <div class="header__menu-logo logo ">
+                <a href="#" class="logo_link">
+                    <p class="logo_link-text">ЛОГОТИП</p>
+                </a>
+            </div>
+
+            <!--search-->
+            <div class="search__inner menu-search">
+                <form class="menu-search__form" id="menu-search__form" method="get" action="#">
+                    <button class="menu-search__button" onclick="return SearchButtonClick()" type="submit" id="menu-search__button"></button>
+                    <label for="menu-search__input">
+                        <input class="menu-search__input" type="text" placeholder="Поиск товаров" name="search" id="menu-search__input">
+                    </label>
+                </form>
+            </div>
+
+            <!--basket-->
+            <div class="basket">
+                <a href="#" class="basket__link">
+                    Корзина
+                </a>
+                <a href="#" class="basket__link-img"></a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="cameras">
+        <div class="container">
+            <div class="cameras_inner">
+    
+                <!--FILTRES-->
+                <div class="filtres__inner">
+                    <h3 class="filtres__item">ФОТОТЕХНИКА</h3>
+                    <button type="submit" class="filtres__link" onclick="OpenFilterPopup()">
+                        <img class="filtres__options" src=" images/options.svg" alt="Опции фильтра">
+                    </button>
+                </div>
+                <!--FORM FILTRES-->
+                <form class="cameras__filtres" action="/" id="cameras__filtres">
+                    <label for="cameras_logo">
+                        <select class="cameras__logo" name="cameras_logo" id="cameras_logo" >
+                            <option class="cameras__logo-item" value="logo_item1">Любого логотипа</option>
+                            <option class="cameras__logo-item" value="logo_item2">Компакт-камера</option>
+                            <option class="cameras__logo-item" value="logo_item3">Беззеркальная</option>
+                            <option class="cameras__logo-item" value="logo_item4">Зеркальная</option>
+                            <option class="cameras__logo-item" value="logo_item5">Среднеформатная</option>
+                        </select>
+                    </label>
+    
+                    <label for="cameras_brand">
+                        <select class="cameras__brand" name="cameras_brand" id="cameras_brand">
+                        <option class="cameras__brand-item" value="brand_item1">Любого бренда</option>
+                        <option class="cameras__brand-item" value="brand_item2">Canon</option>
+                        <option class="cameras__brand-item" value="brand_item3">Nikon</option>
+                        <option class="cameras__brand-item" value="brand_item4">Sony</option>
+                        <option class="cameras__brand-item" value="brand_item5">Fujifilm</option>
+                        <option class="cameras__brand-item" value="brand_item6">Samsung</option>
+                        <option class="cameras__brand-item" value="brand_item7">Olympus</option>
+                    </select>
+                    </label>
+    
+                    <div class="cameras__price">
+                        <span class="cameras__text cameras__price-title">по цене</span>
+    
+                        <div class="cameras__price-container">
+                            <label  class="cameras__price-limit-start" for="start_price">от</label>
+                            <input class="cameras__price-start" type="text" id="start_price" name="start_price">
+                        </div>
+    
+                        <div class="cameras__price-container">
+                            <label  class="cameras__price-limit-end" for="end_price">до</label>
+                            <input class="cameras__price-end" type="text" id="end_price" name="end_price">
+                        </div>
+    
+                        <span class="cameras__text cameras__price-currency">рублей</span>
+                    </div>
+                </form>
+    
+                <!--CARDS-->
+                <div class="cards">
+                    <!--BIG CARD-->
+                    <div class="cardBig" onclick="CardClick()" id="cardBig">
+                            <img class="cardBig__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardBig__description">
+                                <h3 class="cardBig__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardBig__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных
+                                    любителей профессиональных фотографов и видеооператоров. Преемник успешной
+                                    модели EOS 5D Mark II. Фотоаппарат имеет 22.3 Мп. CMOS-сенсор размером 36х24
+                                    мм, 14-битный процессор DIGIC 5+, 61-точечный автофокус.
+                                </p>
+                                <div class="cardBig__priceBlock">
+                                    <p class="cardBig__priceBlock-oldprice">4 400,00 руб.</p>
+                                    <a href="/"  onclick="BasketClickCardBig()"><p class="cardBig__priceBlock-newprice">3 200,00 руб.</p></a>
+                                </div>
+                            </div>
+                    </div>
+    
+                    <!--SMALL CARDS-->
+                    <div class="cardItem" onclick="CardClick()" >
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                    </div>
+    
+                    <div class="cardItem" onclick="CardClick()">
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                    </div>
+    
+                    <!--SMALL CARDS-->
+                     <div class="cardItem" onclick="CardClick()">
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                    </div>
+    
+                     <div class="cardItem" onclick="CardClick()">
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                     </div>
+    
+                     <div class="cardItem" onclick="CardClick()">
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                     </div>
+    
+                     <div class="cardItem" onclick="CardClick()">
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                     </div>
+    
+                     <div class="cardItem" onclick="CardClick()">
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                     </div>
+    
+                     <div class="cardItem" onclick="CardClick()">
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                     </div>
+    
+                     <div class="cardItem" onclick="CardClick()">
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                     </div>
+    
+                     <div class="cardItem" onclick="CardClick()">
+                            <img class="cardItem__img" src=" images/camera_small.avif" alt="Фотоаппарат">
+                            <div class="cardItem__description">
+                                <h3 class="cardItem__title">Canon EOS 5D Mark III Body</h3>
+                                <p class="cardItem__text">
+                                    Полнокадровая цифровая зеркальная камера, предназначенная для опытных любителей.
+                                </p>
+                                <a href="/" onclick="BasketClickCard()"><p class="cardItem__price">3 200,00 руб.</p></a>
+                            </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+<footer>
+
+</footer>
+
+<!-- JS FOR DROPDOWN SELECTRIC-->
+<script src=" js/jquery.min.js"></script>
+<script src=" js/jquery.selectric.min.js"></script>
+<script>
+    $(function(){
+        $('select, .select').selectric({ disableOnMobile: false, nativeOnMobile: false });
+    });
+
+</script>
+
+<script src=" js/main.min.js"></script>
+
+</body>
+</html>

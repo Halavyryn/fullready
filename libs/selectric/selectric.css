@@ -1,0 +1,230 @@
+/*======================================================================
+  Selectric
+======================================================================*/
+
+.selectricWrapper, .cameras_logo .selectricWrapper, .cameras_brand .selectricWrapper {
+    position: relative;
+    width: 264px;
+    height: 48px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.selectricResponsive, .cameras_logo .selectricResponsive,  .cameras_brand .selectricResponsive{
+    width: 100%;
+}
+
+.selectric, .cameras_logo .selectric, .cameras_brand .selectric{
+    border: 1px solid #DDD;
+    position: relative;
+    background: #fff;
+}
+
+.selectric .label, .cameras_logo .selectric .label, .cameras_brand .selectric .label {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: center;
+    padding: 13px 17px;
+    color: #484848;
+    font-family: "PT Sans",sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.selectric .button, .cameras__logo .selectric .button, .cameras__brand .selectric .button {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    color: #BBB;
+    text-align: center;
+    font: 0px/0 a;
+    /* IE Fix */
+    *font: 20px/30px Lucida Sans Unicode, Arial Unicode MS, Arial;
+}
+
+.cameras__logo .selectric .button:after {
+    content: " ";
+    position: absolute;
+    top: 17px;
+    right: 0;
+    bottom: 0;
+    left: -12px;
+    margin: auto;
+    width: 13px;
+    height: 13px;
+    background: url("../../images/caret-down.svg");
+}
+
+.cameras__brand .selectric .button:after {
+    content: " ";
+    position: absolute;
+    top: 17px;
+    right: 0;
+    bottom: 0;
+    left: -10px;
+    margin: auto;
+    width: 13px;
+    height: 13px;
+    background: url("../../images/caret-down.svg");
+}
+
+.selectricHover .selectric {
+    border-color: #CCC;
+}
+
+.selectricHover .selectric .button {
+    color: #888;
+}
+
+.selectricHover .selectric .button:after {
+    border-top-color: #888;
+}
+
+.selectricOpen {
+    z-index: 9999 !important;
+}
+
+.selectricOpen .selectric {
+    position: relative;
+    border-color: #CCC;
+    background: #fff;
+    z-index: 999;
+    border-bottom: none;
+}
+.selectricOpen .selectric:after{
+    content: " ";
+    position: absolute;
+    top: 44px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 230px;
+    height: 1px;
+    background: #D0D0D0FF;
+}
+
+.selectricOpen .selectricItems {
+    display: block;
+}
+
+.selectricDisabled {
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.selectricHideSelect {
+    position: relative;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+}
+
+.selectricHideSelect select {
+    position: absolute;
+    left: -100%;
+    display: none;
+}
+
+.selectricInput {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    outline: none !important;
+    border: none !important;
+    *font: 0px/0 a !important;
+    background: none !important;
+}
+
+.selectricTempShow {
+    position: absolute !important;
+    visibility: hidden !important;
+    display: block !important;
+}
+
+/* Items box */
+
+.selectricItems {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #CCC;
+    border-top: 1px solid #fff;
+    z-index: 998;
+    -webkit-box-shadow: 0 0 10px -6px;
+    box-shadow: 0 0 10px -6px;
+}
+
+.selectricItems ul,
+.selectricItems li {
+    list-style: none;
+    margin: 0;
+    min-height: 20px;
+    color: #484848;
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.selectricItems li {
+    padding: 4px 17px;
+    display: block;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #fff;
+    color: #666;
+    cursor: pointer;
+}
+.selectricItems li:nth-child(2){
+    padding-top: 13px;
+}
+.cameras__brand .selectricItems li:nth-child(2){
+    padding-top: 15px;
+}
+
+.selectricItems li:last-child{
+    padding-bottom: 17px;
+}
+
+.selectricItems li.selected {
+    background: #fff;
+    color: #484848;
+    border-top-color: #fff;
+}
+
+.selectricItems li:hover {
+    background: #E8EEFF;
+    color: #484848;
+}
+
+.selectricItems li.disabled {
+    background: #F5F5F5;
+    color: #BBB;
+    border-top-color: #FAFAFA;
+    cursor: default;
+}
+.cameras li:first-child{
+    display: none;
+}
